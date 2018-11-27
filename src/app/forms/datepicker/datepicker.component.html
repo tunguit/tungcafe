@@ -1,14 +1,54 @@
 <article class="article">
-  <h2 class="article-title">Material Datepicker</h2>
+  <h2 class="article-title">Theo dõi thu - chi quán</h2>
 
   <div class="box box-default">
-    <div class="box-header">Basic Datepicker</div>
+    <div class="box-header">Theo dõi hàng ngày</div>
     <div class="box-body">
+
+      <div class="form-group row">
+        <div class="col-md-12">
+          <form class="form-inline" role="form">
+            <label class="sr-only" for="inlineFormInput">Tiền cọc</label>
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="100.000">
+            <button mat-raised-button color="accent" class="btn-w-md no-margin-left">Ok</button>
+          </form>
+        </div>
+      </div>
+
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker" placeholder="Chọn ngày">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      
+      <div class="form-group row">
+        <div class="col-4">
+          <mat-form-field>
+            <mat-select placeholder="Chọn danh mục chi" [(ngModel)]="selectedValue" name="food">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-input-container class="full-width">
+              <input matInput placeholder="Ghi chú" value="Bao gồm nguyên liệu,...">
+            </mat-input-container>
+        </div>
+        <div class="col-4">
+          <mat-input-container class="full-width" dividerColor="warn"> <input matInput #postalCode placeholder="Số tiền" value="55.000"> <mat-hint align="end">VNĐ</mat-hint> </mat-input-container>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-12">
+          <button mat-raised-button color="primary" class="btn-w-md no-margin-left">Thêm mục thu - chi</button>
+          <button mat-raised-button color="primary" class="btn-w-md no-margin-left">Nhập</button>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </article>
