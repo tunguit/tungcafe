@@ -56,4 +56,30 @@ export class ProductService {
       }
     ];
   }
+
+  getCoffeeProducts(){
+    return [
+      {
+        name: 'Cà phê đen đá/nóng',
+        img: this.productImagePath + 'watch-silver.png',
+        sash: 'sash-primary',
+        sash_icon: 'star',
+        sash_text: 'Featured'
+      },
+      {
+        name: 'Cà phê sữa đá/nóng',
+        img: this.productImagePath + 'watch-silver.png',
+        sash: 'sash-primary',
+        sash_icon: 'star',
+        sash_text: 'Featured'
+      },
+      {
+        name: 'Bạc sửu đá/nóng',
+        img: this.productImagePath + 'watch-silver.png',
+        sash: 'sash-primary',
+        sash_icon: 'star',
+        sash_text: 'Featured'
+      }
+    ]
+  }
 }
